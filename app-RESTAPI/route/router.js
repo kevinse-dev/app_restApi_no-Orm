@@ -11,4 +11,5 @@ module.exports = (app) => {
     app.route(`${urlApi}add/mahasiswa`).post(controller.create)
     app.route(`${urlApi}update/mahasiswa/:id`).put(controller.update)
     app.route(`${urlApi}delete/mahasiswa/:id`).delete(controller.delete)
+    app.route(`${urlApi}mahasiswa&matakuliah`).get(controller.getAllNested)
 }

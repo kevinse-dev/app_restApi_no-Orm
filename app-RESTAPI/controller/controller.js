@@ -83,3 +83,21 @@ exports.delete = (req, res) => {
         }
     })
 }
+
+// show matakuliah group
+exports.getAllNested = (req, res) => {
+
+    const querySql = `select mahasiswa.id, mahasiswa.nim, mahasiswa.nama, mahasiswa.jurusan,matakuliah.matakuliah, matakuliah.sks
+    from krs
+    join matakuliah
+    join mahasiswa
+    where krs.matakuliah_id = 
+    matakuliah.matakuliah_id
+    and krs.id = mahasiswa.id
+    order by mahasiswa.id`
+
+    connect.query(querySql, (err, rows, fields) => {
+        if(err) {console.log('err:',err)}
+        response.nestedSuccess(res, rows)
+    })
+}
