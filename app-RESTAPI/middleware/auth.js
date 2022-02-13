@@ -84,3 +84,8 @@ exports.login = (req, res) => {
         }
     })
 }
+
+// secure endpoint
+exports.dashboard = (req, res) => {
+    response.success(res, 'Welcome to the Dashboard')
+}
