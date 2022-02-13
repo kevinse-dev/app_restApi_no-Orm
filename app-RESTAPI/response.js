@@ -9,3 +9,12 @@ exports.success = (res, data) => {
     res.json(response)
     res.end()
 }
+
+exports.filed = (res, statusCode, message) => {
+    const response = {
+        'status': statusCode,
+        'message': message
+    }
+    res.json(response)
+    res.end()
+}
